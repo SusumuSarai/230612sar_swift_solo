@@ -2,30 +2,36 @@
 
 #Table of content
 
-_[Todo](#Todo_app)_
+_[Todo](#Todo_app)_.
 
-_[Swift](#swift)_
-[Variable](#variable)
-[if/switch](#if/switch)
-[for-in](#for-in)
-[func](#func)
-[class](#class)
-[struct](#struct)
-[enum](#enum)
-[protocol](#protocol)
-[delegate](#delegate)
-[Extension](#Extension)
-_[SwiftUI](#swiftUI)_
-[View](#View)
-[@State](#@State)
-[@ObservedObject](#@ObservedObject)
-[@EnvironmentObject](#@EnvironmentObject)
-[@Binding](#@Binding)
-[sheet](#sheet)
-[fullScreenCover](#fullScreenCover)
-[TextField.onSubmit](#TextField.onSubmit)
-[Image.resizable.frame](#Image.resizable.frame)
-[Toggle.disabled](#Toggle.disabled)
+_[Swift](#swift)_.
+[Variable](#variable).
+[if/switch](#if/switch).
+[for-in](#for-in).
+[func](#func).
+[class](#class).
+[struct](#struct).
+[enum](#enum).
+[protocol](#protocol).
+[delegate](#delegate).
+[Extension](#Extension).
+_[SwiftUI](#swiftUI)_.
+[View](#View).
+[Text](#Text).
+[List](#List).
+[NavigationStack(iOS16-)/NavigationView](<#NavigationStack(iOS16-)/NavigationView>).
+[HStack/VStack](#HStack/VStack).
+[Button](#Button).
+[ForEach](#ForEach).
+[@State](#@State).
+[@ObservedObject](#@ObservedObject).
+[@EnvironmentObject](#@EnvironmentObject).
+[@Binding](#@Binding).
+[sheet](#sheet).
+[fullScreenCover](#fullScreenCover).
+[TextField.onSubmit](#TextField.onSubmit).
+[Image.resizable.frame](#Image.resizable.frame).
+[Toggle.disabled](#Toggle.disabled).
 
 # Todo_app
 
@@ -278,6 +284,10 @@ class UserData: ObservableObject {
         Task(title: "筋トレ", checked: true)
     ]
 }
+
+// 引用先も変更（対象データに "@ObservedObject" 追記）
+    @ObservedObject var userData = UserData()
+
 ```
 
 ### enum
