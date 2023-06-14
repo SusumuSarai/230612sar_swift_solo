@@ -2,88 +2,89 @@
 
 #Table of content
 
-_[Todo](#Todo_app)_.
+_[Todo](#Todo_app)_
 
-_[Swift](#swift)_.
-[Variable](#variable).
-[if/switch](#if/switch).
-[for-in](#for-in).
-[func](#func).
-[class](#class).
-[struct](#struct).
-[enum](#enum).
-[protocol](#protocol).
-[delegate](#delegate).
-[Extension](#Extension).
-_[SwiftUI](#swiftUI)_.
-[View](#View).
-[Text](#Text).
-[List](#List).
-[NavigationStack(iOS16-)/NavigationView](<#NavigationStack(iOS16-)/NavigationView>).
-[HStack/VStack](#HStack/VStack).
-[Button](#Button).
-[ForEach](#ForEach).
-[@State](#@State).
-[@ObservedObject](#@ObservedObject).
-[@EnvironmentObject](#@EnvironmentObject).
-[@Binding](#@Binding).
-[sheet](#sheet).
-[fullScreenCover](#fullScreenCover).
-[TextField.onSubmit](#TextField.onSubmit).
-[Image.resizable.frame](#Image.resizable.frame).
-[Toggle.disabled](#Toggle.disabled).
+_[Swift](#swift)_  
+[Variable](#variable)  
+[if/switch](#if/switch)  
+[for-in](#for-in)  
+[func](#func)  
+[class](#class)  
+[struct](#struct)  
+[enum](#enum)  
+[protocol](#protocol)  
+[delegate](#delegate)  
+[Extension](#Extension)  
+_[SwiftUI](#swiftUI)_  
+[View](#View)  
+[Text](#Text)  
+[List](#List)  
+[NavigationStack(iOS16-)/NavigationView](<#NavigationStack(iOS16-)/NavigationView>)  
+[HStack/VStack](#HStack/VStack)  
+[Button](#Button)  
+[ForEach](#ForEach)  
+[@State](#@State)  
+[@ObservedObject](#@ObservedObject)  
+[@EnvironmentObject](#@EnvironmentObject)  
+[@Binding](#@Binding)  
+[sheet](#sheet)  
+[fullScreenCover](#fullScreenCover)  
+[TextField.onSubmit](#TextField.onSubmit)  
+[Image.resizable.frame](#Image.resizable.frame)  
+[Toggle.disabled](#Toggle.disabled)
 
 # Todo_app
 
 # Swift
 
-[【Xcode14/Swift5】SwiftUI で始める iPhone アプリ開発入門講座/Zenn](https://zenn.dev/rikutosato/books/6cee0a2b8aa796)..
-[Udemy*Mogi*【iOS】SwiftUI 超入門 - Swift を基礎から学んで iOS (iPhone) アプリを開発しよう](https://toyotajp.udemy.com/course/swiftui-ios-iphone/learn/lecture/25085934#overview).
-[Udemy*Yamada*【Swift5 対応】絶対に挫折しない！未経験者がゼロから iOS アプリを開発するための全て！](https://toyotajp.udemy.com/course/swift5ios/learn/lecture/27602562#overview).
+[【Xcode14/Swift5】SwiftUI で始める iPhone アプリ開発入門講座/Zenn](https://zenn.dev/rikutosato/books/6cee0a2b8aa796)  
+[Udemy*Mogi*【iOS】SwiftUI 超入門 - Swift を基礎から学んで iOS (iPhone) アプリを開発しよう](https://toyotajp.udemy.com/course/swiftui-ios-iphone/learn/lecture/25085934#overview)  
+[Udemy*Yamada*【Swift5 対応】絶対に挫折しない！未経験者がゼロから iOS アプリを開発するための全て！](https://toyotajp.udemy.com/course/swift5ios/learn/lecture/27602562#overview)
 
 文末の `;` は不要
 
 ## variable
 
-`var variable = "variable"`.
-`let constant = "constant"`.
-// Lower camel case.
+`var variable = "variable"` // 変数：何度でも代入可能
+`let constant = "constant"` // 定数：一度値を代入すると、それ以降代入できない  
+// 再代入する可能性のないものはすべて let にする。それ以外は var にする  
+// Lower camel case
 
-`let abc: String = "apple"` String 型.
-`let def: Int = 3` Int 型：整数型.
-`let ghi: Double = 1.2` double 型：浮動小数点型。小数も扱える.
-`let isReady: Bool = true` //true or false.
+`let abc: String = "apple"` String 型  
+`let def: Int = 3` Int 型：整数型  
+`let ghi: Double = 1.2` double 型：浮動小数点型。小数も扱える  
+`let isReady: Bool = true` //true or false
 
-//型推論　〜　型宣言は省略しても書ける.
-※注）Double に整数値を入れると型推論しない.
+//型推論　〜　型宣言は省略しても書ける  
+※注）Double に整数値を入れると型推論しない
 
-比較演算子
+比較演算子  
 `== , != , > , <`.
 
-配列型：
-`ver stringArray = ["a", "b", "c"]`.
-`stringArray.append("d")` //　要素の追加.
-`stringArray.remove(at: 0)` //　要素の削除.
+配列型：  
+`ver stringArray = ["a", "b", "c"]`  
+`stringArray.append("d")` //　要素の追加  
+`stringArray.remove(at: 0)` //　要素の削除
 
-.map //同じ.
-.coontain.
+.map //同じ  
+.coontain
 
-Optional 型：値があるものないものある時に使用.
-`let int: Optional<Int> = 1`.
-`let intNil: Optional<Int> = nil` //null でなくて nil.
-// 型の後ろに ? をつけても Optional 型になる.
-`let int: Int? = 1`.
-`let intNil: Int? = nil`.
-※Optional 型はそのままでは四則演算できず、int 型にする必要あり
-`let result = int! + 2 ` // 後ろに ! でアンラップすると演算できる.
-// 初期値の設定 "??"
-`let one = int ?? = 10`.
-`let two = intNull ?? = 20` // intNull は Nil のため初期値 20 が使われる.
+Optional 型：値があるものないものある時に使用  
+`let int: Optional<Int> = 1`  
+`let intNil: Optional<Int> = nil` //null でなくて nil  
+// 型の後ろに ? をつけても Optional 型になる  
+`let int: Int? = 1`  
+`let intNil: Int? = nil`  
+※Optional 型はそのままでは四則演算できず、int 型にする必要あり  
+`let result = int! + 2 ` // 後ろに ! でアンラップすると演算できる  
+// 初期値の設定 "??"  
+`let one = int ?? = 10`  
+`let two = intNull ?? = 20` // intNull は Nil のため初期値 20 が使われる
 
 ## if/switch
 
-if 文　/ js と同じ.
-※ オプショナルバインディング.
+if 文　/ js と同じ  
+※ オプショナルバインディング
 
 ```
 let optionalInt: Int? = nil
@@ -95,7 +96,7 @@ print(int)
 
 ```
 
-switch 文.
+switch 文
 
 ```
 let numberText = "one"
@@ -244,7 +245,7 @@ printo(myCar.name)
 
 ### struct
 
-// class（プログラムの設計図を表現する型） と似た機能を持つ型。
+// class（プログラムの設計図を表現する型） と似た機能を持つ型  
 // struct 　はデータ構造や値を表現する型。構造体 ※イニシャライザ不要
 
 ```
@@ -292,8 +293,8 @@ class UserData: ObservableObject {
 
 ### enum
 
-// enum（列挙型）： 予め定められた種別を表現する型
-※プロパティは定義できず
+// enum（列挙型）： 予め定められた種別を表現する型  
+※プロパティは定義できず  
 （storedProperty／値を保有 : X, computedProperty／値を参照 : O ）
 
 ```
@@ -356,7 +357,7 @@ cat.say()
 
 ### Delegate
 
-//（委任・委託）あるクラスの特定の処理完了時に他のクラスに別の処理を実行させる
+//（委任・委託）あるクラスの特定の処理完了時に他のクラスに別の処理を実行させる  
 //難しい 😓
 
 ```
@@ -440,9 +441,18 @@ extension User: TimelineDelegate {
 
 ### View
 
-見た目を作る部品
-モディファイア：見た目を変えるもの
+[🍎_View](https://developer.apple.com/documentation/swiftui/view/)
+見た目を作る部品  
+モディファイア：見た目を変えるもの  
 View.モディファイア
+
+```
+struct MyView: View {
+    var body: some View {
+        Text("Hello, World!")
+    }
+}
+```
 
 ### Text
 
@@ -500,7 +510,16 @@ Text("Banana")
 
 ### Button
 
+// action（動作） と label（ボタン名） を指定
+
 ```
+Button(action: signIn) {
+    Text("Sign In")
+}
+// テキストのみのラベルは、タイトル文字列を最初のパラメータとして受け取る
+// コンビニエンス イニシャライザを使用可
+Button("Sign In", action: signIn)
+
 Button(action:　{
   print("ボタンがおされました")
 })
@@ -551,9 +570,9 @@ struct ArraycontentView: View {
 
 ### @State
 
-//useState
-値が更新されたら View がリロード(再描画)される.
-struct の中で値を変更することができる.
+//useState  
+値が更新されたら View がリロード(再描画)される  
+struct の中で値を変更することができる
 
 ```
 struct ContentView: View {
