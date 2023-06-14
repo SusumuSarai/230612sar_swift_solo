@@ -552,20 +552,25 @@ Text("\(num): Hello!")
 
 //Array の場合
 struct Human: Identifiable {
-  let id = UUID()
-  let name: String
+    let id = UUID()
+    let name: String
 }
-struct ArraycontentView: View {
-  let humans = [
-    Human(name: "tanaka"),
-    Human(name: "suzuki"),
-    Human(name: "satp")
-  ]
-  var body: some View{}
-    List {
-      ForEach(human) { human in
-      Text("\(human.name), Hello!")
-}}}
+
+struct ArrayContentView: View {
+    let humans = [
+        Human(name: "田中"),
+        Human(name: "鈴木"),
+        Human(name: "佐藤")
+    ]
+    
+    var body: some View {
+        List {
+            ForEach(humans) { human in
+                Text(human.id.description)
+            }
+        }
+    }
+}
 ```
 
 ### @State
