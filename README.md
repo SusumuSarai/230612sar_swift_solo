@@ -13,26 +13,21 @@ _[SwiftUI](#swiftUI)_
 
 # Swift
 
-[🍎Developer_Technologies_Docs](https://developer.apple.com/documentation/technologies)  
+[🍎Developer_Docs_swift](https://developer.apple.com/documentation/swiftui/)  
 [【Xcode14/Swift5】SwiftUI で始める iPhone アプリ開発入門講座/Zenn](https://zenn.dev/rikutosato/books/6cee0a2b8aa796)  
 [Udemy*Mogi*【iOS】SwiftUI 超入門 - Swift を基礎から学んで iOS (iPhone) アプリを開発しよう](https://toyotajp.udemy.com/course/swiftui-ios-iphone/learn/lecture/25085934#overview)  
 [Udemy*Yamada*【Swift5 対応】絶対に挫折しない！未経験者がゼロから iOS アプリを開発するための全て！](https://toyotajp.udemy.com/course/swift5ios/learn/lecture/27602562#overview)
 
 _[Swift](#swift)_  
- [Variable](#variable) [if/switch](#if/switch)  
- [for-in](#for-in) [func](#func)  
- [class](#class) [struct](#struct) [enum](#enum)  
- [protocol](#protocol) [delegate](#delegate) [Extension](#Extension)
+ [Variable](#variable) 　[if/switch](#if/switch) 　[for-in](#for-in) 　[func](#func)  
+ [class](#class) 　[struct](#struct) 　[enum](#enum) 　[protocol](#protocol) 　[delegate](#delegate) 　[Extension](#Extension)
 
 _[SwiftUI](#swiftUI)_  
-[View](#View) [List](#List) [HStack/VStack](#HStack/VStack)  
-[Text](#Text) [Image.resizable.frame](#Image.resizable.frame)  
+[View](#View) 　[List](#List) 　[HStack/VStack](#HStack/VStack) [Text](#Text) 　[Image.resizable.frame](#Image.resizable.frame)  
 [NavigationStack(iOS16-)/NavigationView](<#NavigationStack(iOS16-)/NavigationView>)  
-[TextField.onSubmit](#TextField.onSubmit) [Toggle.disabled](#Toggle.disabled) [Button](#Button)  
-[ForEach](#ForEach)  
-[sheet](#sheet) [fullScreenCover](#fullScreenCover)  
-[@State](#@State) [@ObservedObject](#@ObservedObject)  
-[@EnvironmentObject](#@EnvironmentObject) [@Binding](#@Binding)
+[TextField.onSubmit](#TextField.onSubmit) 　[Toggle.disabled](#Toggle.disabled) 　[Button](#Button) 　[ForEach](#ForEach)  
+[sheet](#sheet) 　[fullScreenCover](#fullScreenCover)  
+[@State](#@State) 　[@ObservedObject](#@ObservedObject) 　[@EnvironmentObject](#@EnvironmentObject) 　[@Binding](#@Binding)
 
 文末の `;` は不要
 
@@ -504,6 +499,21 @@ Text("Banana")
 ### Button
 
 // action（動作） と label（ボタン名） を指定
+// 書式１
+
+```
+Button("ボタン名") {
+  処理
+}
+```
+
+// 書式２
+
+```
+Button(action : { 処理 } ) {
+  Text(ボタン名)
+}
+```
 
 ```
 Button(action: signIn) {
