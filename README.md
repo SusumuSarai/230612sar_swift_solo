@@ -2,44 +2,37 @@
 
 #Table of content
 
-_[Todo](#Todo_app)_
-
+_[Tododo](#Tododo_app)_
 _[Swift](#swift)_  
-[Variable](#variable)  
-[if/switch](#if/switch)  
-[for-in](#for-in)  
-[func](#func)  
-[class](#class)  
-[struct](#struct)  
-[enum](#enum)  
-[protocol](#protocol)  
-[delegate](#delegate)  
-[Extension](#Extension)  
-_[SwiftUI](#swiftUI)_  
-[View](#View)  
-[Text](#Text)  
-[List](#List)  
-[NavigationStack(iOS16-)/NavigationView](<#NavigationStack(iOS16-)/NavigationView>)  
-[HStack/VStack](#HStack/VStack)  
-[Button](#Button)  
-[ForEach](#ForEach)  
-[@State](#@State)  
-[@ObservedObject](#@ObservedObject)  
-[@EnvironmentObject](#@EnvironmentObject)  
-[@Binding](#@Binding)  
-[sheet](#sheet)  
-[fullScreenCover](#fullScreenCover)  
-[TextField.onSubmit](#TextField.onSubmit)  
-[Image.resizable.frame](#Image.resizable.frame)  
-[Toggle.disabled](#Toggle.disabled)
+_[SwiftUI](#swiftUI)_
 
-# Todo_app
+# Tododo_app
+
+やることリスト
+拡張性：地図と連携
 
 # Swift
 
+[🍎Developer_Technologies_Docs](https://developer.apple.com/documentation/technologies)  
 [【Xcode14/Swift5】SwiftUI で始める iPhone アプリ開発入門講座/Zenn](https://zenn.dev/rikutosato/books/6cee0a2b8aa796)  
 [Udemy*Mogi*【iOS】SwiftUI 超入門 - Swift を基礎から学んで iOS (iPhone) アプリを開発しよう](https://toyotajp.udemy.com/course/swiftui-ios-iphone/learn/lecture/25085934#overview)  
 [Udemy*Yamada*【Swift5 対応】絶対に挫折しない！未経験者がゼロから iOS アプリを開発するための全て！](https://toyotajp.udemy.com/course/swift5ios/learn/lecture/27602562#overview)
+
+_[Swift](#swift)_  
+ [Variable](#variable) [if/switch](#if/switch)  
+ [for-in](#for-in) [func](#func)  
+ [class](#class) [struct](#struct) [enum](#enum)  
+ [protocol](#protocol) [delegate](#delegate) [Extension](#Extension)
+
+_[SwiftUI](#swiftUI)_  
+[View](#View) [List](#List) [HStack/VStack](#HStack/VStack)  
+[Text](#Text) [Image.resizable.frame](#Image.resizable.frame)  
+[NavigationStack(iOS16-)/NavigationView](<#NavigationStack(iOS16-)/NavigationView>)  
+[TextField.onSubmit](#TextField.onSubmit) [Toggle.disabled](#Toggle.disabled) [Button](#Button)  
+[ForEach](#ForEach)  
+[sheet](#sheet) [fullScreenCover](#fullScreenCover)  
+[@State](#@State) [@ObservedObject](#@ObservedObject)  
+[@EnvironmentObject](#@EnvironmentObject) [@Binding](#@Binding)
 
 文末の `;` は不要
 
