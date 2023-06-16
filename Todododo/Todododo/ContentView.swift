@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
     // タスクの構造定義
@@ -32,42 +33,58 @@ struct ContentView: View {
     @State var taskInput = ""
     @State var isEditing :Bool = false
     
+    // map関係
+    @State var region = MKCoordinateRegion(
+        center : CLLocationCoordinate2D(
+            latitude: 35.16994578842911,  // 緯度35.710057714926265
+            longitude: 136.88515917469581 // 経度139.81071829999996
+        ),
+        latitudinalMeters: 1000.0, // 南北
+        longitudinalMeters: 1000.0 // 東西
+    )
+    
     // 画面表示
     var body: some View {
         NavigationStack{
-            List{
-                //タスク表示処理　※チェックボックス機能付与
-                ForEach(tasks) {task in
-                    Button(action: {
-                        guard let index = self.tasks.firstIndex(of: task) else {
-                            return
-                        }
-                        self.tasks[index].checked.toggle()
-                    }){
-                        if task.checked {
-                            HStack{Text("☑︎")
-                                Text(task.taskTitle).strikethrough().fontWeight(.ultraLight)
+            VStack{
+                List{
+                    //タスク表示処理　※チェックボックス機能付与
+                    ForEach(tasks) {task in
+                        Button(action: {
+                            guard let index = self.tasks.firstIndex(of: task) else {
+                                return
                             }
-                        }
-                        else {
-                            HStack{Text("□")
-                                Text(task.taskTitle)
+                            self.tasks[index].checked.toggle()
+                        }){
+                            if task.checked {
+                                HStack{Text("☑︎")
+                                    Text(task.taskTitle).strikethrough().fontWeight(.ultraLight)
+                                }
+                            }
+                            else {
+                                HStack{Text("□")
+                                    Text(task.taskTitle)
+                                }
                             }
                         }
                     }
-                }
-                //タスク入力処理
-                if isEditing {TextField("Plese fill in", text: $taskInput)
-                        .onSubmit{tasks.insert(Task(taskTitle: taskInput, checked: false), at: 0)
-                            taskInput = ""
-                            isEditing = false
+                    //タスク入力処理
+                    if isEditing {TextField("Plese fill in", text: $taskInput)
+                            .onSubmit{tasks.insert(Task(taskTitle: taskInput, checked: false), at: 0)
+                                taskInput = ""
+                                isEditing = false
+                            }
+                    } else {
+                        Button("+"){isEditing = true
                         }
-                } else {
-                    Button("+"){isEditing = true
                     }
                 }
+                Map(coordinateRegion: $region)
+                    .edgesIgnoringSafeArea(.bottom)
+                
             }
-            .padding().navigationTitle(Text("ToDo do!"))
+            .navigationTitle(Text("ToDo do!"))
+            //タスク完了処理(削除)
             .toolbar {
                 ToolbarItem {
                     Button("Delete"){tasks = tasks.filter({!$0.checked})
@@ -78,6 +95,7 @@ struct ContentView: View {
     }
 }
 
+// 表示用コード
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
